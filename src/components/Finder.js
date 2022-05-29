@@ -1,12 +1,12 @@
 function Finder() {
   return (
-    <div data-testid="finder-test">
+    <div className="form-control" data-testid="finder-test">
       <form data-testid="finder-test-form">
         <input
           placeholder="GitHub Username"
         >
         </input>
-        <button>Search</button>
+        <button className="btn">Search</button>
       </form>
     </div>
   )

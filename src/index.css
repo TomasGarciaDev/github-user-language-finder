@@ -14,7 +14,7 @@ body {
   max-width: 800px;
   margin: 30px auto;
   overflow: auto;
-  min-height: 400px;
+  min-height: 450px;
   border: 10px solid steelblue;
   padding: 30px;
   border-radius: 20px;
@@ -24,4 +24,44 @@ body {
   text-align: center;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.form-control {
+  margin: 40px 0;
+  
+}
+
+.form-control form {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.usercard {
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  margin: 20px 5px 30px 5px;
+  padding: 3px 7px;
+  font-size: 17px;
 }
