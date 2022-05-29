@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const Finder = () => {
   const [username, setUsername] = useState("");
+  const [repos, setRepos] = useState([]);
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,13 +11,17 @@ const Finder = () => {
   };
 
   const searchRepos = () => {
+    console.log(repos)
     axios({
       method: "get",
       url: `https://api.github.com/users/${username}/repos`,
     }).then(res => {
-      console.log(res.data)
-    })
-  }
+      setUsername("");
+      setRepos(res.data)}).catch(e => {
+        alert("User not found");
+        setUsername("");
+      })
+  };
 
   return (
     <div className="form-control" data-testid="finder-test">
