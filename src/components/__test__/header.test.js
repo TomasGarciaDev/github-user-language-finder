@@ -1,6 +1,10 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import Header from '../Header';
 
+afterEach(() => {
+  cleanup();
+});
+
 test('should render a Header component', () => {
   render(<Header />);
   const headerElement= screen.getByTestId('header-test');
