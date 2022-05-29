@@ -6,8 +6,17 @@ const Finder = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username)
+    searchRepos();
   };
+
+  const searchRepos = () => {
+    axios({
+      method: "get",
+      url: `https://api.github.com/users/${username}/repos`,
+    }).then(res => {
+      console.log(res.data)
+    })
+  }
 
   return (
     <div className="form-control" data-testid="finder-test">
