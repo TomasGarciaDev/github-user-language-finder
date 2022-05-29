@@ -1,7 +1,8 @@
+import Header from './components/Header'
 function App() {
   return (
     <div className="App">
-      <h1>GITHUB USER FAVORITE LANGUAGE FINDER</h1>
+      <Header />
     </div>
   );
 }
