@@ -1,5 +1,6 @@
 const UserCard = ({ repos }) => {
   let languages = [];
+  let language = '';
 
   const getLanguages = (array) => {
     array.map(repo => {
@@ -10,9 +11,14 @@ const UserCard = ({ repos }) => {
     })
   }
 
-getLanguages(repos)
+  const getFavoriteLanguage = (array) => {
+    language = array.sort((a,b) => array.filter(v => v===a).length-languages.filter(v => v===b).length).pop();
+  }
 
-console.log(languages)
+getLanguages(repos);
+getFavoriteLanguage(languages);
+
+console.log(language)
 
   return (
     <div className="usercard" data-testid="usercard-test">
