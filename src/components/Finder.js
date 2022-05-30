@@ -4,6 +4,7 @@ import axios from 'axios';
 const Finder = () => {
   const [username, setUsername] = useState("");
   const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,10 +13,12 @@ const Finder = () => {
 
   const searchRepos = () => {
     console.log(repos)
+    setLoading(true)
     axios({
       method: "get",
-      url: `https://api.github.com/users/${username}/repos`,
+      url: ` https://api.github.com/users/${username}/repos`,
     }).then(res => {
+      setLoading(false);
       setUsername("");
       setRepos(res.data)}).catch(e => {
         alert("User not found");
@@ -32,7 +35,7 @@ const Finder = () => {
           onChange={e => setUsername(e.target.value)}
         >
         </input>
-        <button className="btn" onClick={handleSubmit}>Search</button>
+        <button className="btn" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
       </form>
     </div>
   )
