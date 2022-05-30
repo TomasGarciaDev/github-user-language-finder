@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import UserCard from './UserCard';
 
 const Finder = () => {
   const [username, setUsername] = useState("");
@@ -37,6 +38,7 @@ const Finder = () => {
         </input>
         <button className="btn" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
       </form>
+      <UserCard />
     </div>
   )
 }
