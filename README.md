@@ -23,7 +23,7 @@ This app was created with JavaScript and React library. Using Axios to `get` req
 
 2. Clone the repo: (if you have the file already on your machine, skip to step 2)
 ```
-git clone https://github.com/TomasGarciaDev/mvf-github-user-language-finder.git
+git clone https://github.com/TomasGarciaDev/github-user-language-finder.git
 ```
 
 3. cd into the directory
