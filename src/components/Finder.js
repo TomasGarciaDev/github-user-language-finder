@@ -13,7 +13,6 @@ const Finder = () => {
   };
 
   const searchRepos = () => {
-    console.log(repos)
     setLoading(true)
     axios({
       method: "get",
@@ -22,6 +21,7 @@ const Finder = () => {
       setLoading(false);
       setUsername("");
       setRepos(res.data)}).catch(e => {
+        setLoading(false);
         alert("User not found");
         setUsername("");
       })
@@ -38,7 +38,7 @@ const Finder = () => {
         </input>
         <button className="btn" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
       </form>
-      <UserCard />
+      {repos.length > 0 && <UserCard repos={repos}/>}
     </div>
   )
 }
