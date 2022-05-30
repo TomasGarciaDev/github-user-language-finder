@@ -22,7 +22,7 @@ console.log(language)
 
   return (
     <div className="usercard" data-testid="usercard-test">
-      <h2>Superman's favorite programming language is JavaScript</h2>
+      <h2>{repos[1].owner.login}'s favorite programming language is {language}</h2>
     </div>
   )
 }
