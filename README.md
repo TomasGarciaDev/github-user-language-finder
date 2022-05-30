@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# GitHub User Favourite Language Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the Project
+This is `GitHub User Favourite Language Finder` app that allows the user to find GitHub users' most used programming language. Users have to enter an arbitrary GitHub user name; the app will return and display the best gest of their favorite programming language.
+This app was created with JavaScript and React library. Using Axios to `get` request from the GitHub API and tested with @testing-library/react (render, screen, cleanup). 
 
-## Available Scripts
+## Project Overview
+* The app has been built using three components: Header, Finder, and UserCard.
+* Visiting users are prompted by a header "GITHUB USER FAVORITE LANGUAGE FINDER" rendered by the Header component and a form rendered by the Finder component.
+* After the user fills the field with a GitHub username and submits on "Search' the 'searchRepos()' method will `get` request from to the GitHub API. Axios is used for the request, if the users exist, an array of repository objects is received. If the GitHub user does not exist or the form is submitted without filling it correctly, an `alert` will be displayed on screen.
+* After the respond from the API, the UserCard component receives the array as a props. Using two methods (getFavorite() and getFavoriteLanguages()), the array is filtered to get the most used language. Then a string is displayed to let them know the GitHub user's most used language.
+* UserCard component is rendered from the Finder component.
 
-In the project directory, you can run:
+## Getting started locally
 
-### `npm start`
+### Prerequisities
+- [node](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Make sure preqrequisites are installed
 
-### `npm test`
+2. Clone the repo: (if you have the file already on your machine, skip to step 2)
+```
+git clone https://github.com/TomasGarciaDev/mvf-github-user-language-finder.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. cd into the directory
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Install NPM packages
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Run client-side React with:
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Visit: 
+```
+http://localhost:3000/ 
+```
 
-### `npm run eject`
+For running test:
+```
+npm run test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### What you should see 
+![Screenshot 2022-05-30 at 15 14 10](https://user-images.githubusercontent.com/86299300/170999887-c95535f5-8b5d-4d0b-b5c1-3973004677a3.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## App Usage
+Fill in the 'GitHub Username' field and click on the 'Search' button.
+![Screenshot 2022-05-30 at 15 17 37](https://user-images.githubusercontent.com/86299300/171000415-77cc0bc7-7cd0-467a-9ae7-806508f9c7fb.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If you have typed an existing GitHub user, you will be prompt with his favorite language.
+![Screenshot 2022-05-30 at 15 20 04](https://user-images.githubusercontent.com/86299300/171000836-58bffa7e-03b4-47cf-adf2-c8a488522d08.png)
 
-## Learn More
+If you have typed an unexisting GitHub user, you will be prompt with an alert message 'User not found.'
+![Screenshot 2022-05-30 at 15 33 36](https://user-images.githubusercontent.com/86299300/171003214-039bcd47-9079-4e9d-94dc-641b103fdbda.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks and hope you enjoy the app!
